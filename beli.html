@@ -71,18 +71,26 @@
 
         const params = new URLSearchParams(window.location.search);
 
-        const produk = params.get("produk");
-        const harga = params.get("harga");
+        const produk = params.get("produk") || "Produk tidak diketahui";
+        const harga = params.get("harga") || "0";
 
-        document.getElementById("namaProduk").innerText = produk;
-        document.getElementById("hargaProduk").innerText = harga;
+        const namaProduk = document.getElementById("namaProduk");
+        const hargaProduk = document.getElementById("hargaProduk");
+        const btnWa = document.getElementById("btnWa");
+
+        namaProduk.innerText = produk;
+        hargaProduk.innerText = harga;
 
         const nomorWa = "6285724536271";
 
-        const pesan = `Halo admin, saya ingin membeli ${produk} dengan harga Rp ${harga}`;
-
-        document.getElementById("btnWa").href =
-        `https://wa.me/${nomorWa}?text=${encodeURIComponent(pesan)}`;
+        if (produk !== "Produk tidak diketahui" && harga !== "0") {
+            const pesan = `Halo admin, saya ingin membeli ${produk} dengan harga Rp ${harga}`;
+            btnWa.href = `https://wa.me/${nomorWa}?text=${encodeURIComponent(pesan)}`;
+        } else {
+            btnWa.href = "#";
+            btnWa.classList.add("disabled");
+            btnWa.innerText = "Parameter produk tidak lengkap";
+        }
 
     </script>
 

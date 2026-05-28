@@ -166,6 +166,10 @@
             </p>
         </div>
 
+        <div id="infoBox" class="alert alert-info text-center d-none" role="alert">
+            Pilih produk untuk melihat detail terlebih dahulu.
+        </div>
+
         <!-- PRODUK -->
         <div class="row g-4">
 
@@ -185,9 +189,9 @@
                             Rp 25.000
                         </p>
 
-                        <a href="beli.html?produk=Pashmina%20Ceruty&harga=25000" class="btn btn-beli w-100">
+                        <button type="button" data-produk="Pashmina Ceruty" data-harga="25000" class="btn btn-beli w-100">
                             Beli Sekarang
-                        </a>
+                        </button>
 
                     </div>
                 </div>
@@ -209,9 +213,9 @@
                             Rp 30.000
                         </p>
 
-                        <a href="beli.html?produk=Hijab%20Instan%20Jersey&harga=30000" class="btn btn-beli w-100">
+                        <button type="button" data-produk="Hijab Instan Jersey" data-harga="30000" class="btn btn-beli w-100">
                             Beli Sekarang
-                        </a>
+                        </button>
 
                     </div>
                 </div>
@@ -233,9 +237,9 @@
                             Rp 18.000
                         </p>
 
-                        <a href="beli.html?produk=Bella%20Square%20Polos&harga=18000" class="btn btn-beli w-100">
+                        <button type="button" data-produk="Bella Square Polos" data-harga="18000" class="btn btn-beli w-100">
                             Beli Sekarang
-                        </a>
+                        </button>
 
                     </div>
                 </div>
@@ -257,9 +261,9 @@
                             Rp 28.000
                         </p>
 
-                        <a href="beli.html?produk=Pashmina%20Plisket&harga=28000" class="btn btn-beli w-100">
+                        <button type="button" data-produk="Pashmina Plisket" data-harga="28000" class="btn btn-beli w-100">
                             Beli Sekarang
-                        </a>
+                        </button>
 
                     </div>
                 </div>
@@ -273,6 +277,25 @@
     <footer>
         © 2026 GlowHijab Store. All Rights Reserved.
     </footer>
+
+    <script>
+        const infoBox = document.getElementById("infoBox");
+
+        document.querySelectorAll(".btn-beli").forEach(button => {
+            button.addEventListener("click", () => {
+                const produk = button.dataset.produk;
+                const harga = button.dataset.harga;
+                const url = `beli.html?produk=${encodeURIComponent(produk)}&harga=${encodeURIComponent(harga)}`;
+
+                infoBox.textContent = `Kamu memilih ${produk} dengan harga Rp ${harga}. Mengarahkan ke halaman pesanan...`;
+                infoBox.classList.remove("d-none");
+
+                setTimeout(() => {
+                    window.location.href = url;
+                }, 500);
+            });
+        });
+    </script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
