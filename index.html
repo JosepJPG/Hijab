@@ -1,0 +1,282 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GlowHijab Store</title>
+
+    <!-- SEO -->
+    <meta name="description" content="GlowHijab menyediakan hijab premium dengan bahan adem, nyaman dipakai, dan stylish untuk sehari-hari.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/logo.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: 0.3s ease;
+        }
+
+        body{
+            background: linear-gradient(to bottom, #FFF7FA, #FFEFF5);
+            color: #5C4B51;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* NAVBAR */
+        .navbar{
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #f8d7e2;
+        }
+
+        .navbar-brand{
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #D96C95 !important;
+            font-size: 1.4rem;
+        }
+
+        /* HERO */
+        .hero-banner{
+            background: linear-gradient(135deg, #FFD9E7, #FFF0F5);
+            padding: 70px 25px;
+            border-radius: 28px;
+            text-align: center;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 25px rgba(217,108,149,0.12);
+        }
+
+        .hero-banner h1{
+            font-weight: 700;
+            color: #B84F77;
+        }
+
+        .hero-banner p{
+            color: #8B6B76;
+            margin-top: 10px;
+        }
+
+        /* CARD */
+        .card-produk{
+            border: none;
+            border-radius: 22px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 8px 18px rgba(255,182,193,0.18);
+            height: 100%;
+        }
+
+        .card-produk:hover{
+            transform: translateY(-8px);
+            box-shadow: 0 14px 30px rgba(217,108,149,0.2);
+        }
+
+        .card-produk img{
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+
+        .card-body{
+            padding: 18px;
+        }
+
+        .card-title{
+            color: #684A56;
+            font-weight: 600;
+        }
+
+        .harga{
+            color: #E75480;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        /* BUTTON */
+        .btn-beli{
+            background: linear-gradient(135deg, #F48FB1, #EC729C);
+            border: none;
+            color: white;
+            border-radius: 14px;
+            padding: 10px;
+            font-weight: 500;
+        }
+
+        .btn-beli:hover{
+            background: linear-gradient(135deg, #EC729C, #D95C88);
+            color: white;
+            transform: scale(1.03);
+        }
+
+        /* FOOTER */
+        footer{
+            margin-top: 60px;
+            padding: 25px;
+            text-align: center;
+            color: #8B6B76;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:768px){
+
+            .hero-banner{
+                padding: 45px 20px;
+            }
+
+            .hero-banner h1{
+                font-size: 1.6rem;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg shadow-sm mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                GLOWHIJAB.CO
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- HERO -->
+        <div class="hero-banner">
+            <h1>Pashmina & Hijab Instan Premium</h1>
+            <p>
+                Bahan adem, tegak di dahi, nyaman dipakai sehari-hari.
+            </p>
+        </div>
+
+        <!-- PRODUK -->
+        <div class="row g-4">
+
+            <!-- PRODUK 1 -->
+            <div class="col-6 col-md-3">
+                <div class="card card-produk">
+
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop" alt="Pashmina Ceruty">
+
+                    <div class="card-body text-center">
+
+                        <h5 class="card-title h6">
+                            Pashmina Ceruty
+                        </h5>
+
+                        <p class="harga">
+                            Rp 25.000
+                        </p>
+
+                        <a href="beli.html?produk=Pashmina%20Ceruty&harga=25000" class="btn btn-beli w-100">
+                            Beli Sekarang
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUK 2 -->
+            <div class="col-6 col-md-3">
+                <div class="card card-produk">
+
+                    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1200&auto=format&fit=crop" alt="Hijab Instan Jersey">
+
+                    <div class="card-body text-center">
+
+                        <h5 class="card-title h6">
+                            Hijab Instan Jersey
+                        </h5>
+
+                        <p class="harga">
+                            Rp 30.000
+                        </p>
+
+                        <a href="beli.html?produk=Hijab%20Instan%20Jersey&harga=30000" class="btn btn-beli w-100">
+                            Beli Sekarang
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUK 3 -->
+            <div class="col-6 col-md-3">
+                <div class="card card-produk">
+
+                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&auto=format&fit=crop" alt="Bella Square">
+
+                    <div class="card-body text-center">
+
+                        <h5 class="card-title h6">
+                            Bella Square Polos
+                        </h5>
+
+                        <p class="harga">
+                            Rp 18.000
+                        </p>
+
+                        <a href="beli.html?produk=Bella%20Square%20Polos&harga=18000" class="btn btn-beli w-100">
+                            Beli Sekarang
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUK 4 -->
+            <div class="col-6 col-md-3">
+                <div class="card card-produk">
+
+                    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200&auto=format&fit=crop" alt="Pashmina Plisket">
+
+                    <div class="card-body text-center">
+
+                        <h5 class="card-title h6">
+                            Pashmina Plisket
+                        </h5>
+
+                        <p class="harga">
+                            Rp 28.000
+                        </p>
+
+                        <a href="beli.html?produk=Pashmina%20Plisket&harga=28000" class="btn btn-beli w-100">
+                            Beli Sekarang
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 GlowHijab Store. All Rights Reserved.
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+```
