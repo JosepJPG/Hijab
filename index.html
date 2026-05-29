@@ -1,305 +1,84 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>GlowHijab Store</title>
-
-    <!-- SEO -->
-    <meta name="description" content="GlowHijab menyediakan hijab premium dengan bahan adem, nyaman dipakai, dan stylish untuk sehari-hari.">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="img/logo.png">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <title>GlowHijab - Toko Hijab Premium</title>
     <style>
-
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            transition: 0.3s ease;
-        }
-
-        body{
-            background: linear-gradient(to bottom, #FFF7FA, #FFEFF5);
-            color: #5C4B51;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* NAVBAR */
-        .navbar{
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #f8d7e2;
-        }
-
-        .navbar-brand{
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: #D96C95 !important;
-            font-size: 1.4rem;
-        }
-
-        /* HERO */
-        .hero-banner{
-            background: linear-gradient(135deg, #FFD9E7, #FFF0F5);
-            padding: 70px 25px;
-            border-radius: 28px;
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background-color: #fef1f5; color: #4a4a4a; display: flex; justify-content: center; padding: 20px 10px; }
+        .container { max-width: 450px; width: 100%; background: #ffffff; border-radius: 25px; box-shadow: 0 10px 30px rgba(224, 82, 117, 0.15); overflow: hidden; padding-bottom: 30px; }
+        header { padding: 25px 20px; text-align: center; background: linear-gradient(135deg, #ff7597, #e05275); color: white; }
+        .logo { font-size: 24px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
+        .hero-banner { background: #fff0f3; margin: 20px 15px; padding: 20px; text-align: center; border-radius: 15px; border-left: 5px solid #e05275; }
+        .hero-banner h1 { color: #cc3b5e; font-size: 18px; margin-bottom: 8px; }
+        .hero-banner p { color: #666; font-size: 13px; }
+        .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 0 15px; }
+        .product-card { background: #fff; border: 1px solid #ffe1e9; border-radius: 15px; padding: 12px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; }
+        .product-image { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; }
+        .product-title { font-size: 14px; font-weight: bold; margin: 8px 0; min-height: 35px; color: #333; }
+        .product-price { font-size: 14px; font-weight: bold; color: #e05275; margin-bottom: 8px; }
+        
+        .btn-buy { 
+            display: block;
+            background: linear-gradient(135deg, #ff7597, #e05275); 
+            color: white; 
+            padding: 10px; 
+            border-radius: 25px; 
+            font-size: 13px; 
+            font-weight: bold; 
+            text-decoration: none;
+            width: 100%; 
             text-align: center;
-            margin-bottom: 50px;
-            box-shadow: 0 10px 25px rgba(217,108,149,0.12);
         }
-
-        .hero-banner h1{
-            font-weight: 700;
-            color: #B84F77;
-        }
-
-        .hero-banner p{
-            color: #8B6B76;
-            margin-top: 10px;
-        }
-
-        /* CARD */
-        .card-produk{
-            border: none;
-            border-radius: 22px;
-            overflow: hidden;
-            background: white;
-            box-shadow: 0 8px 18px rgba(255,182,193,0.18);
-            height: 100%;
-        }
-
-        .card-produk:hover{
-            transform: translateY(-8px);
-            box-shadow: 0 14px 30px rgba(217,108,149,0.2);
-        }
-
-        .card-produk img{
-            width: 100%;
-            aspect-ratio: 1/1;
-            object-fit: cover;
-        }
-
-        .card-body{
-            padding: 18px;
-        }
-
-        .card-title{
-            color: #684A56;
-            font-weight: 600;
-        }
-
-        .harga{
-            color: #E75480;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        /* BUTTON */
-        .btn-beli{
-            background: linear-gradient(135deg, #F48FB1, #EC729C);
-            border: none;
-            color: white;
-            border-radius: 14px;
-            padding: 10px;
-            font-weight: 500;
-        }
-
-        .btn-beli:hover{
-            background: linear-gradient(135deg, #EC729C, #D95C88);
-            color: white;
-            transform: scale(1.03);
-        }
-
-        /* FOOTER */
-        footer{
-            margin-top: 60px;
-            padding: 25px;
-            text-align: center;
-            color: #8B6B76;
-            font-size: 0.9rem;
-        }
-
-        /* RESPONSIVE */
-        @media(max-width:768px){
-
-            .hero-banner{
-                padding: 45px 20px;
-            }
-
-            .hero-banner h1{
-                font-size: 1.6rem;
-            }
-
-        }
-
     </style>
 </head>
-
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg shadow-sm mb-4">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                GLOWHIJAB.CO
-            </a>
-        </div>
-    </nav>
-
     <div class="container">
+        <header>
+            <div class="logo">💖 GLOWHIJAB.CO</div>
+        </header>
 
-        <!-- HERO -->
-        <div class="hero-banner">
+        <section class="hero-banner">
             <h1>Pashmina & Hijab Instan Premium</h1>
-            <p>
-                Bahan adem, tegak di dahi, nyaman dipakai sehari-hari.
-            </p>
-        </div>
+            <p>Bahan super adem, tegak paripurna, nyaman sehari-hari ✨</p>
+        </section>
 
-        <div id="infoBox" class="alert alert-info text-center d-none" role="alert">
-            Pilih produk untuk melihat detail terlebih dahulu.
-        </div>
-
-        <!-- PRODUK -->
-        <div class="row g-4">
-
-            <!-- PRODUK 1 -->
-            <div class="col-6 col-md-3">
-                <div class="card card-produk">
-
-                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop" alt="Pashmina Ceruty">
-
-                    <div class="card-body text-center">
-
-                        <h5 class="card-title h6">
-                            Pashmina Ceruty
-                        </h5>
-
-                        <p class="harga">
-                            Rp 25.000
-                        </p>
-
-                        <button type="button" data-produk="Pashmina Ceruty" data-harga="25000" class="btn btn-beli w-100">
-                            Beli Sekarang
-                        </button>
-
-                    </div>
-                </div>
+        <main class="product-grid">
+            <!-- Produk 1 -->
+            <div class="product-card">
+                <img src="img/Ceruty.jpeg" class="product-image" alt="Pashmina Ceruty">
+                <div class="product-title">Pashmina Ceruty Baby Doll</div>
+                <div class="product-price">Rp 25.000</div>
+                <a href="beli.html?nama=Pashmina%20Ceruty%20Baby%20Doll&harga=25000" class="btn-buy">Beli Sekarang</a>
             </div>
 
-            <!-- PRODUK 2 -->
-            <div class="col-6 col-md-3">
-                <div class="card card-produk">
-
-                    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1200&auto=format&fit=crop" alt="Hijab Instan Jersey">
-
-                    <div class="card-body text-center">
-
-                        <h5 class="card-title h6">
-                            Hijab Instan Jersey
-                        </h5>
-
-                        <p class="harga">
-                            Rp 30.000
-                        </p>
-
-                        <button type="button" data-produk="Hijab Instan Jersey" data-harga="30000" class="btn btn-beli w-100">
-                            Beli Sekarang
-                        </button>
-
-                    </div>
-                </div>
+            <!-- Produk 2 -->
+            <div class="product-card">
+                <img src="img/BergoInstan.jpeg" class="product-image" alt="Hijab Instan">
+                <div class="product-title">Hijab Bergo Instan Jersey</div>
+                <div class="product-price">Rp 30.000</div>
+                <a href="beli.html?nama=Hijab%20Instan%20Jersey&harga=30000" class="btn-buy">Beli Sekarang</a>
             </div>
 
-            <!-- PRODUK 3 -->
-            <div class="col-6 col-md-3">
-                <div class="card card-produk">
-
-                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&auto=format&fit=crop" alt="Bella Square">
-
-                    <div class="card-body text-center">
-
-                        <h5 class="card-title h6">
-                            Bella Square Polos
-                        </h5>
-
-                        <p class="harga">
-                            Rp 18.000
-                        </p>
-
-                        <button type="button" data-produk="Bella Square Polos" data-harga="18000" class="btn btn-beli w-100">
-                            Beli Sekarang
-                        </button>
-
-                    </div>
-                </div>
+            <!-- Produk 3 -->
+            <div class="product-card">
+                <img src="img/BellaSquare.jpeg" class="product-image" alt="Bella Square">
+                <div class="product-title">Bella Square Polos</div>
+                <div class="product-price">Rp 18.000</div>
+                <a href="beli.html?nama=Bella%20Square%20Polos&harga=18000" class="btn-buy">Beli Sekarang</a>
             </div>
 
-            <!-- PRODUK 4 -->
-            <div class="col-6 col-md-3">
-                <div class="card card-produk">
-
-                    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200&auto=format&fit=crop" alt="Pashmina Plisket">
-
-                    <div class="card-body text-center">
-
-                        <h5 class="card-title h6">
-                            Pashmina Plisket
-                        </h5>
-
-                        <p class="harga">
-                            Rp 28.000
-                        </p>
-
-                        <button type="button" data-produk="Pashmina Plisket" data-harga="28000" class="btn btn-beli w-100">
-                            Beli Sekarang
-                        </button>
-
-                    </div>
-                </div>
+            <!-- Produk 4 -->
+            <div class="product-card">
+                <img src="img/vischose.jpeg" class="product-image" alt="Pashmina Plisket">
+                <div class="product-title">Pashmina Vischose Full</div>
+                <div class="product-price">Rp 48.000</div>
+                <a href="beli.html?nama=Pashmina%20Plisket%20Full&harga=28000" class="btn-buy">Beli Sekarang</a>
             </div>
-
-        </div>
-
+        </main>
     </div>
-
-    <!-- FOOTER -->
-    <footer>
-        © 2026 GlowHijab Store. All Rights Reserved.
-    </footer>
-
-    <script>
-        const infoBox = document.getElementById("infoBox");
-
-        document.querySelectorAll(".btn-beli").forEach(button => {
-            button.addEventListener("click", () => {
-                const produk = button.dataset.produk;
-                const harga = button.dataset.harga;
-                const url = `beli.html?produk=${encodeURIComponent(produk)}&harga=${encodeURIComponent(harga)}`;
-
-                infoBox.textContent = `Kamu memilih ${produk} dengan harga Rp ${harga}. Mengarahkan ke halaman pesanan...`;
-                infoBox.classList.remove("d-none");
-
-                setTimeout(() => {
-                    window.location.href = url;
-                }, 500);
-            });
-        });
-    </script>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
-```
