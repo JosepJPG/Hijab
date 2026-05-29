@@ -3,82 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GlowHijab - Toko Hijab Premium</title>
+    <title>GlowHijab - Selamat Datang</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-        body { background-color: #fef1f5; color: #4a4a4a; display: flex; justify-content: center; padding: 20px 10px; }
-        .container { max-width: 450px; width: 100%; background: #ffffff; border-radius: 25px; box-shadow: 0 10px 30px rgba(224, 82, 117, 0.15); overflow: hidden; padding-bottom: 30px; }
-        header { padding: 25px 20px; text-align: center; background: linear-gradient(135deg, #ff7597, #e05275); color: white; }
-        .logo { font-size: 24px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
-        .hero-banner { background: #fff0f3; margin: 20px 15px; padding: 20px; text-align: center; border-radius: 15px; border-left: 5px solid #e05275; }
-        .hero-banner h1 { color: #cc3b5e; font-size: 18px; margin-bottom: 8px; }
-        .hero-banner p { color: #666; font-size: 13px; }
-        .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 0 15px; }
-        .product-card { background: #fff; border: 1px solid #ffe1e9; border-radius: 15px; padding: 12px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; }
-        .product-image { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; }
-        .product-title { font-size: 14px; font-weight: bold; margin: 8px 0; min-height: 35px; color: #333; }
-        .product-price { font-size: 14px; font-weight: bold; color: #e05275; margin-bottom: 8px; }
-        
-        .btn-buy { 
-            display: block;
-            background: linear-gradient(135deg, #ff7597, #e05275); 
-            color: white; 
-            padding: 10px; 
-            border-radius: 25px; 
-            font-size: 13px; 
-            font-weight: bold; 
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body {
+            background: linear-gradient(135deg, #fdf1f4, #fff7fb);
+            color: #3d3d3d;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .page {
+            width: 100%;
+            max-width: 520px;
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 30px 80px rgba(224, 82, 117, 0.14);
+            overflow: hidden;
+            animation: fadeIn 0.6s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero {
+            background: linear-gradient(135deg, #ff7aa0, #e05174);
+            color: #ffffff;
+            padding: 40px 30px 30px;
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            right: -30px;
+            top: 30px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 50%;
+            filter: blur(15px);
+        }
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 22px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 18px;
+        }
+        .brand span {
+            font-size: 22px;
+        }
+        h1 {
+            font-size: 32px;
+            line-height: 1.1;
+            margin-bottom: 18px;
+        }
+        p {
+            font-size: 15px;
+            line-height: 1.75;
+            color: rgba(255, 255, 255, 0.92);
+            margin-bottom: 28px;
+        }
+        .btn-shop {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: #ffffff;
+            color: #e05174;
+            padding: 15px 24px;
+            border-radius: 999px;
+            font-weight: 700;
             text-decoration: none;
-            width: 100%; 
+            box-shadow: 0 18px 40px rgba(224, 82, 117, 0.2);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .btn-shop:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 22px 48px rgba(224, 82, 117, 0.28);
+        }
+        .features {
+            display: grid;
+            gap: 16px;
+            padding: 30px 30px 35px;
+        }
+        .feature-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            background: #fff4f8;
+            border: 1px solid #ffd6e4;
+            border-radius: 18px;
+            padding: 16px;
+            box-shadow: 0 10px 28px rgba(224, 82, 117, 0.06);
+        }
+        .feature-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #ffe6ef;
+            display: grid;
+            place-items: center;
+            font-size: 18px;
+        }
+        .feature-info {
+            display: grid;
+            gap: 6px;
+        }
+        .feature-info h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #3d3d3d;
+        }
+        .feature-info p {
+            font-size: 13px;
+            color: #6d6d6d;
+            line-height: 1.5;
+        }
+        .stats {
+            display: flex;
+            gap: 12px;
+            padding: 0 30px 30px;
+        }
+        .stat-card {
+            flex: 1;
+            background: #ffffff;
+            border: 1px solid #ffe1e9;
+            border-radius: 18px;
+            padding: 18px 16px;
             text-align: center;
+            box-shadow: 0 10px 25px rgba(224, 82, 117, 0.07);
+        }
+        .stat-card strong {
+            display: block;
+            font-size: 20px;
+            color: #e05174;
+            margin-bottom: 8px;
+        }
+        .stat-card span {
+            font-size: 13px;
+            color: #737373;
+            line-height: 1.5;
         }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <header>
-            <div class="logo">💖 GLOWHIJAB.CO</div>
-        </header>
-
-        <section class="hero-banner">
-            <h1>Pashmina & Hijab Instan Premium</h1>
-            <p>Bahan super adem, tegak paripurna, nyaman sehari-hari ✨</p>
+    <div class="page">
+        <section class="hero">
+            <div class="brand"><span>💖</span> GlowHijab</div>
+            <h1>Buka hari ini: Temukan Hijab Premium untuk penampilan lebih percaya diri.</h1>
+            <p>GlowHijab hadir dengan koleksi pashmina, hijab instan, dan square yang lembut, adem, dan nyaman dipakai sepanjang hari. Cocok untuk gaya kasual hingga formal.</p>
+            <a href="shop.html" class="btn-shop">Belanja Sekarang</a>
         </section>
 
-        <main class="product-grid">
-            <!-- Produk 1 -->
-            <div class="product-card">
-                <img src="img/Ceruty.jpeg" class="product-image" alt="Pashmina Ceruty">
-                <div class="product-title">Pashmina Ceruty Baby Doll</div>
-                <div class="product-price">Rp 25.000</div>
-                <a href="beli.html?nama=Pashmina%20Ceruty%20Baby%20Doll&harga=25000" class="btn-buy">Beli Sekarang</a>
+        <div class="features">
+            <div class="feature-item">
+                <div class="feature-icon">✨</div>
+                <div class="feature-info">
+                    <h3>Bahan Premium</h3>
+                    <p>Material lembut, adem, dan mudah dirawat untuk hijab sehari-hari.</p>
+                </div>
             </div>
+            <div class="feature-item">
+                <div class="feature-icon">🛍️</div>
+                <div class="feature-info">
+                    <h3>Desain Elegan</h3>
+                    <p>Koleksi dengan potongan modern yang tetap sopan dan stylish.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🚚</div>
+                <div class="feature-info">
+                    <h3>Pengiriman Cepat</h3>
+                    <p>Proses order cepat dan siap kirim ke seluruh Indonesia.</p>
+                </div>
+            </div>
+        </div>
 
-            <!-- Produk 2 -->
-            <div class="product-card">
-                <img src="img/BergoInstan.jpeg" class="product-image" alt="Hijab Instan">
-                <div class="product-title">Hijab Bergo Instan Jersey</div>
-                <div class="product-price">Rp 30.000</div>
-                <a href="beli.html?nama=Hijab%20Instan%20Jersey&harga=30000" class="btn-buy">Beli Sekarang</a>
+        <div class="stats">
+            <div class="stat-card">
+                <strong>4+</strong>
+                <span>Produk pilihan premium</span>
             </div>
-
-            <!-- Produk 3 -->
-            <div class="product-card">
-                <img src="img/BellaSquare.jpeg" class="product-image" alt="Bella Square">
-                <div class="product-title">Bella Square Polos</div>
-                <div class="product-price">Rp 18.000</div>
-                <a href="beli.html?nama=Bella%20Square%20Polos&harga=18000" class="btn-buy">Beli Sekarang</a>
+            <div class="stat-card">
+                <strong>100%</strong>
+                <span>Feedback positif dari pelanggan</span>
             </div>
-
-            <!-- Produk 4 -->
-            <div class="product-card">
-                <img src="img/vischose.jpeg" class="product-image" alt="Pashmina Plisket">
-                <div class="product-title">Pashmina Vischose Full</div>
-                <div class="product-price">Rp 48.000</div>
-                <a href="beli.html?nama=Pashmina%20Plisket%20Full&harga=28000" class="btn-buy">Beli Sekarang</a>
-            </div>
-        </main>
+        </div>
     </div>
-
 </body>
 </html>
