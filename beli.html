@@ -77,12 +77,7 @@
             <label>Alamat Pengiriman</label>
             <textarea id="alamatPengiriman" placeholder="Tulis alamat lengkap penerima"></textarea>
         </div>
-        // INI NOMOR WHATSSAPP ADMIN, BISA DIUBAH SESUAI YANG MBA MAU
-        <div class="form-group">
-            <label>Nomor WhatsApp</label>
-            <input type="text" id="nomorWhatsApp" value="6285846622468" placeholder="6281234567890">
-        </div>
-
+        
         <!-- Tombol Hubung WhatsApp -->
         <a href="#" id="tombolWA" class="btn-whatsapp" target="_blank" onclick="validasiSebelumKirim(event)">💬 Pesan via WhatsApp</a>
     </div>
@@ -92,6 +87,8 @@
         const urlParams = new URLSearchParams(window.location.search);
         const namaProduk = urlParams.get('nama') || 'Pashmina Ceruty Baby Doll';
         const hargaProduk = urlParams.get('harga') || '25000';
+        // Ubah nomor WhatsApp di sini ya mbaa, pastiin gaada '+' atau '-' yahh
+        const defaultWhatsAppNumber = '6285846622468';
 
         document.getElementById('hijabPilihan').value = namaProduk;
         document.getElementById('hargaHijab').value = 'Rp ' + new Intl.NumberFormat('id-ID').format(hargaProduk);
@@ -101,7 +98,7 @@
             const nama = document.getElementById('namaLengkap').value;
             const warna = document.getElementById('warnaJilbab').value;
             const alamat = document.getElementById('alamatPengiriman').value;
-            const nomor = document.getElementById('nomorWhatsApp').value.replace(/\D/g, '');
+            const nomor = defaultWhatsAppNumber.replace(/\D/g, '');
             
             
             const pesan = `Hai admin GlowHijab, aku mau order koleksi hijab cantiknya. ini detail pesanannya! ✨\n\n` +
@@ -134,7 +131,6 @@
         document.getElementById('namaLengkap').addEventListener('input', perbaruiLinkWhatsApp);
         document.getElementById('warnaJilbab').addEventListener('change', perbaruiLinkWhatsApp);
         document.getElementById('alamatPengiriman').addEventListener('input', perbaruiLinkWhatsApp);
-        document.getElementById('nomorWhatsApp').addEventListener('input', perbaruiLinkWhatsApp);
         
         perbaruiLinkWhatsApp();
     </script>
